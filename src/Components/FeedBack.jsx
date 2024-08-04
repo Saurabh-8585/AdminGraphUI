@@ -38,7 +38,7 @@ const FeedBack = () => {
   return (
     <div className="col-span-full xl:col-span-8 bg-white dark:bg-gray-800 shadow-sm rounded-xl w-full h-full">
       <header className="px-5 py-4 border-b border-gray-100 dark:border-gray-700/60">
-        <h2 className="font-semibold text-gray-800 dark:text-gray-100">
+        <h2 className="font-bold text-2xl text-gray-800 dark:text-gray-100">
           Customer's Feedback
         </h2>
       </header>

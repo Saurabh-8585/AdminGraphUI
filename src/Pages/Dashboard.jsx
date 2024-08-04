@@ -27,13 +27,13 @@ function Dashboard() {
             </div>
 
             <div className="flex flex-col w-full gap-7 py-2">
-              <div className="flex justify-center lg:flex-nowrap w-full items-center  flex-wrap   gap-2">
+              <div className="flex justify-center lg:flex-nowrap w-full items-center  flex-wrap   gap-7 lg:gap-2">
                 <WidgetCard />
                 <div className="w-full  lg:w-[40%] ">
                   <ProfitProgress />
                 </div>
               </div>
-              <div className="flex justify-center md:flex-nowrap w-full items-center  flex-wrap   gap-2">
+              <div className="flex justify-center md:flex-nowrap w-full items-center  flex-wrap   gap-7 lg:gap-2">
                 <div className="flex gap-4 lg:flex-nowrap  flex-wrap w-full  md:w-[60%]">
                   <ActivityBarGraph />
                 </div>
@@ -41,7 +41,7 @@ function Dashboard() {
                   <GoalCard />
                 </div>
               </div>
-              <div className="flex justify-center md:flex-nowrap w-full items-center  flex-wrap   gap-2">
+              <div className="flex justify-center md:flex-nowrap w-full items-center  flex-wrap gap-7 lg:gap-2">
                 <div className="flex gap-4 lg:flex-nowrap  flex-wrap w-full  md:w-[60%]">
                   <OrderTable />
                 </div>

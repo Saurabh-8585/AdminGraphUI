@@ -36,14 +36,14 @@ const OrderTable = () => {
   return (
     <div className="col-span-full xl:col-span-8 bg-white dark:bg-gray-800 shadow-sm rounded-xl w-full ">
       <header className="px-5 py-4 border-b border-gray-100 dark:border-gray-700/60">
-        <h2 className="font-semibold text-gray-800 dark:text-gray-100">
+        <h2 className="font-bold text-2xl text-gray-800 dark:text-gray-100">
           Recent Orders
         </h2>
       </header>
       <div className="p-3">
-        <div className="overflow-x-auto">
+        <div className="overflow-x-hidden">
           <table className="table-auto w-full dark:text-gray-300">
-            <thead className="text-xs uppercase text-gray-400 dark:text-gray-500 bg-gray-50 dark:bg-gray-700 dark:bg-opacity-50 rounded-sm">
+            <thead className="text-xs  text-gray-400 dark:text-white bg-gray-50 dark:bg-gray-700 dark:bg-opacity-50 rounded-sm">
               <tr>
                 <th className="p-2">
                   <div className="font-semibold text-left">Customer</div>
@@ -59,8 +59,7 @@ const OrderTable = () => {
                 </th>
               </tr>
             </thead>
-            {/* Table body */}
-            <tbody className="text-sm font-medium divide-y divide-gray-100 dark:divide-gray-700/60">
+            <tbody className="text-sm font-normal divide-y divide-gray-100 dark:divide-gray-700/60">
               {data.map((row, index) => (
                 <tr key={index}>
                   <td className="p-2">

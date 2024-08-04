@@ -8,17 +8,17 @@ const GoalCard = () => {
   const data = [
     {
       title: "Goals",
-      icon: <BiTargetLock className="text-[#ff3658]" />,
+      icon: <BiTargetLock className="text-[#ff3658] text-xl" />,
       bg: "#FCA5A5",
     },
     {
       title: "Popular Dishes",
-      icon: <GiHotMeal className="text-white" />,
+      icon: <GiHotMeal className="text-white text-xl" />,
       bg: "#4338CA",
     },
     {
       title: "Menus",
-      icon: <MdMenuBook className="text-white" />,
+      icon: <MdMenuBook className="text-white text-xl" />,
       bg: "#06B6D4",
     },
   ];
@@ -28,11 +28,11 @@ const GoalCard = () => {
       {data.map((item, index) => (
         <div
           key={index}
-          className="flex justify-between items-center px-2 my-4"
+          className="flex justify-between items-center px-2 my-3"
         >
           <div className="flex gap-5 items-center">
             <div
-              className="p-2 rounded-full"
+              className="p-3 rounded-full"
               style={{ backgroundColor: item.bg }}
             >
               {item.icon}

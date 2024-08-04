@@ -132,9 +132,6 @@ function Sidebar({ sidebarOpen, setSidebarOpen, variant = "default" }) {
               >
                 •••
               </span>
-              <span className="lg:hidden lg:sidebar-expanded:block 2xl:block">
-                Pages
-              </span>
             </h3>
             <ul className="mt-3">
               {links.map((link, index) => (

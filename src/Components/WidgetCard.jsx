@@ -6,48 +6,69 @@ import {
   MdCancel,
   MdAttachMoney,
 } from "react-icons/md";
+
 const WidgetCard = () => {
-  const commonClass = "bg-gray-600 text-4xl p-2 rounded-lg text-white";
+  const gradientBackgrounds = {
+    blue: "bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600",
+    green: "bg-gradient-to-r from-green-400 via-green-500 to-green-600",
+    orange: "bg-gradient-to-r from-orange-400 via-orange-500 to-orange-600",
+    pink: "bg-gradient-to-r from-pink-400 via-pink-500 to-pink-600",
+  };
 
   const cardData = [
     {
-      icon: <MdShoppingCart className={commonClass} />,
+      icon: (
+        <MdShoppingCart
+          className={`text-4xl p-2 rounded-lg text-white ${gradientBackgrounds.blue}`}
+        />
+      ),
       title: "Total Orders",
       count: "75",
       percent: 3,
-      percentColor: "green",
-    },
-    {
-      icon: <MdLocalShipping className={commonClass} />,
-      title: "Total Delivered",
-      count: "70",
-      percent: 3,
-      percentColor: "red",
-    },
-    {
-      icon: <MdCancel className={commonClass} />,
-      title: "Total Cancelled",
-      count: "05",
-      percent: 3,
-      percentColor: "green",
+      isIncrease: true,
     },
     {
       icon: (
-        <MdAttachMoney className="bg-gray-600 text-4xl p-2 rounded-md text-white" />
+        <MdLocalShipping
+          className={`text-4xl p-2 rounded-lg text-white ${gradientBackgrounds.green}`}
+        />
+      ),
+      title: "Total Delivered",
+      count: "70",
+      percent: 3,
+      isIncrease: false,
+    },
+    {
+      icon: (
+        <MdCancel
+          className={`text-4xl p-2 rounded-lg text-white ${gradientBackgrounds.orange}`}
+        />
+      ),
+      title: "Total Cancelled",
+      count: "05",
+      percent: 3,
+      isIncrease: true,
+    },
+    {
+      icon: (
+        <MdAttachMoney
+          className={`text-4xl p-2 rounded-lg text-white ${gradientBackgrounds.pink}`}
+        />
       ),
       title: "Total Revenue",
       count: 12,
       percent: 3,
-      percentColor: "green",
+      isIncrease: false,
       isRevenue: true,
     },
   ];
+
   return (
-    <div className="flex gap-4 lg:flex-nowrap  flex-wrap w-full  lg:w-[60%]">
+    <div className="flex gap-4 lg:flex-nowrap flex-wrap w-full lg:w-[60%]">
       {cardData.map(
-        ({ count, icon, percent, percentColor, title, isRevenue }, index) => (
+        ({ count, icon, isIncrease, percent, title, isRevenue }, index) => (
           <div
-            className="flex flex-col w-full bg-white dark:bg-gray-800 shadow-sm rounded-xl py-5 "
+            className="flex flex-col w-full bg-white dark:bg-gray-800 shadow-sm rounded-xl py-5"
             key={index}
           >
             <div className="px-3">
@@ -63,9 +84,15 @@ const WidgetCard = () => {
                   {count}
                 </div>
                 <div
-                  className={`flex  items-center text-sm font-medium text-${percentColor}-700 px-1.5  rounded-full`}
+                  className={`flex items-center text-sm font-bold text-${
+                    isIncrease ? "green" : "red"
+                  }-700 px-1.5 rounded-full`}
                 >
-                  {percentColor === "red" ? <FaCaretDown /> : <FaCaretUp />}{" "}
+                  {isIncrease ? (
+                    <FaCaretUp className="text-xl font-bold" />
+                  ) : (
+                    <FaCaretDown className="text-xl font-bold" />
+                  )}{" "}
                   {percent}%
                 </div>
               </div>
