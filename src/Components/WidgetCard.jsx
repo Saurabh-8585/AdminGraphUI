@@ -84,9 +84,8 @@ const WidgetCard = () => {
                   {count}
                 </div>
                 <div
-                  className={`flex items-center text-sm font-bold text-${
-                    isIncrease ? "green" : "red"
-                  }-700 px-1.5 rounded-full`}
+                  className={`flex items-center text-sm font-bold ${isIncrease ? "text-green-700" : "text-red-700"
+                    } px-1.5 rounded-full`}
                 >
                   {isIncrease ? (
                     <FaCaretUp className="text-xl font-bold" />
